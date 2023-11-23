@@ -1,0 +1,77 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+body {
+    background-color:#6E8898;
+}
+
+main {
+    width: 70%;
+    margin: 10rem auto;
+    font-family: 'Bree Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    background-color: white;
+}
+
+#testoAlternato {
+    text-align: left;
+    border: 3px solid rgb(138, 138, 138);
+    padding: 2rem;
+    line-height: 1.6;
+    color: rgb(80, 80, 80);
+    position:relative;
+}
+
+span {
+    color: #6E8898;
+    padding-left:0.5rem;
+}
+
+#word-1 {
+    animation-name: fallingWords;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    position:absolute;
+    top: 0;
+    opacity: 0
+}
+
+#word-2 {
+    animation-name: fallingWords;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    position:absolute;
+    top: 0;
+    opacity: 0
+
+
+}
+
+#word-3 {
+    animation-name: fallingWords;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    position:absolute;
+    top: 0;
+    opacity: 0
+}
+
+
+@keyframes fallingWords {
+    from {top:0; opacity: 0}
+
+    80%{top: calc(100% - 4rem + 6px); opacity: 1}
+
+    to {top: calc(100% - 4rem + 6px + 1rem); opacity: 0}
+}
